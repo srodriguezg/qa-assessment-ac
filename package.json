@@ -4,9 +4,11 @@
   "description": "This is automation for qa-assessment ac",
   "main": "index.js",
   "scripts": {
-    "chrome": "testcafe chrome test/google.ts --reporter spec,html:report/report.html",
-    "chrome:headless": "testcafe chrome:headless test/google.ts --reporter spec,html:report/report.html",
-    "test": "testcafe chrome:headless test/google.ts --reporter spec,html:report/report.html"
+    "clean": "rimraf reports",
+    "lint": "tslint -c tslint.json --project tsconfig.json",
+    "test": "cucumber-js src/features/ --require-module \"ts-node/register\" --require \"src/**/*.ts\" -f json:reports/cucumber_report.json",
+    "tests": "cucumber-js -p cucumber",
+    "report": "node cucumber-html.config.js"
   },
   "repository": {
     "type": "git",
@@ -26,10 +28,28 @@
   },
   "homepage": "https://github.com/srodriguezg/qa-assessment-ac#readme",
   "devDependencies": {
+    "@types/chai": "~4.2.2",
+    "@types/chai-string": "~1.4.2",
+    "@types/cucumber": "~6.0.0",
     "@types/node": "^18.0.0",
     "chai": "^4.3.6",
-    "testcafe": "^1.19.0",
+    "chai-string": "~1.5.0",
+    "testcafe": "1.8.3",
     "testcafe-reporter-html": "^1.4.6",
-    "typescript": "^4.7.4"
+    "typescript": "^4.7.4",
+    "cucumber": "~6.0.5",
+    "cucumber-html-reporter": "~5.0.2",
+    "tslint": "~5.20.0",
+    "tslint-config-prettier": "~1.18.0",
+    "tslint-config-standard": "~9.0.0",
+    "base64-img": "~1.0.4",
+    "node-fetch": "~2.6.0",
+    "prettier": "~1.19.1",
+    "screenshot-desktop": "~1.10.0",
+    "ts-node": "^8.5.4"
+  },
+  "dependencies": {
+    "export-to-csv": "^0.2.1",
+    "js-base64": "^3.5.2"
   }
 }
