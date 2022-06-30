@@ -1,0 +1,35 @@
+{
+  "name": "qa-assessment-ac",
+  "version": "1.0.0",
+  "description": "This is automation for qa-assessment ac",
+  "main": "index.js",
+  "scripts": {
+    "chrome": "testcafe chrome test/google.ts --reporter spec,html:report/report.html",
+    "chrome:headless": "testcafe chrome:headless test/google.ts --reporter spec,html:report/report.html",
+    "test": "testcafe chrome:headless test/google.ts --reporter spec,html:report/report.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/srodriguezg/qa-assessment-ac.git"
+  },
+  "keywords": [
+    "ui-testing",
+    "ac",
+    "qa",
+    "assessment",
+    "test"
+  ],
+  "author": "Santiago Rodriguez Gutierrez <santiagorock000@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/srodriguezg/qa-assessment-ac/issues"
+  },
+  "homepage": "https://github.com/srodriguezg/qa-assessment-ac#readme",
+  "devDependencies": {
+    "@types/node": "^18.0.0",
+    "chai": "^4.3.6",
+    "testcafe": "^1.19.0",
+    "testcafe-reporter-html": "^1.4.6",
+    "typescript": "^4.7.4"
+  }
+}
